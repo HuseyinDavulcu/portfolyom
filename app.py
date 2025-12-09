@@ -47,7 +47,7 @@ with col2:
     **Kullanılanlar:** Excel, VBA, Matematiksel Modelleme
     
     Ürünlerin paletlere en verimli şekilde dizilmesini sağlayan bir algoritma geliştirdim.
-    Bu proje sayesinde paketleme hacminde %20 tasarruf sağlandı.
+    Bu proje sayesinde paketleme hacminde %20 tasarruf sağlandı. Bunun için ayrıca, Konteyner ve Tır yüklemelerindeki, dorse-konteyner ebatlarını yan kısmına ekşleyip, paletlerin yüklemede konteyner veya tıra sığıp sığmayacağını simüle ettim.
     """)
 
 st.divider()
@@ -57,14 +57,14 @@ col3, col4 = st.columns([1, 2])
 with col3:
     st.info("PROJE 2")
  # Dosya uzantısı .jpg ise .jpg, .png ise .png yazmayı unutmayın
-st.image("ciro_hesaplama.PNG", caption="Excel VBA ile Otomatik Palet Yerleşimi")
-st.image("3d_rapor.PNG", caption="Excel VBA ile Otomatik Palet Yerleşimi")
+st.image("ciro_hesaplama.PNG", caption="Excel VBA Otomatik Ciro Hesapla")
+st.image("3d_rapor.PNG", caption="Excel VBA ile 3D Rapor")
 with col4:
     st.subheader("Python Veri Analizi")
     st.write("""
-    **Kullanılanlar:** Python, Pandas, Matplotlib
+    **Kullanılanlar:** Python, Pandas, Matplotlib, Excel
     
-    Satış verilerini analiz ederek otomatik raporlayan bir bot yazdım.
+    Satış verilerini analiz ederek otomatik raporlayan bir bot yazdım. Bunun yanında dünya haritası açılıp ülke bazlı renklendirmeli şekilde, İthalat ve İhracatlarını tek bir noktadan görebilmeyi sağladım.
     """)
 
 # Kapanış
