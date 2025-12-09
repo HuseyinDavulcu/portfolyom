@@ -7,7 +7,7 @@ st.set_page_config(page_title="Benim Portfolyom", page_icon="🚀", layout="wide
 # Sol Taraftaki Yan Menü
 with st.sidebar:
     st.header("İletişim")
-    st.write("📍 Lokasyon: Türkiye")
+    st.write("📍 Lokasyon: Türkiye, Denizli")
     st.write("📧 E-posta: h_1936@hotmail.com")
     st.write("🔗 [LinkedIn Profilim](https://tr.linkedin.com/in/h%C3%BCseyin-d-999a831b1?trk=people-guest_people_search-card)")
     
