@@ -12,11 +12,10 @@ with st.sidebar:
     st.write("🔗 [LinkedIn Profilim](https://tr.linkedin.com/in/h%C3%BCseyin-d-999a831b1?trk=people-guest_people_search-card)")
     
     st.divider()
-    st.write("Bu site Python ve Streamlit ile yapılmıştır.")
 
 # Ana Başlık Bölümü
 st.title("Merhaba, Ben Hüseyin! 👋")
-st.subheader("Python Geliştiricisi & Üretim Tutkunu")
+st.subheader("Kendi yaptığım Çalışmaların küçük özetini burada paylaşıyorum.")
 st.write("""
 Uluslararası Ticaret ve Finans alanındaki sağlam temelimle, otomotiv ve tekstil sektörlerini kapsayan çeşitli bir profesyonel geçmişe sahibim.
 Operasyonel verimlilik, satış becerisi ve teknik inovasyonu benzersiz bir şekilde bir araya getiriyorum.İkiler Otomotiv Filtre İthalat İhracat San. ve Tic. A.Ş.'de en son İhracat Operasyonları Uzmanı olarak lojistiği optimize etmeye ve operasyonel maliyetleri azaltmaya odaklandım.
