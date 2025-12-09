@@ -27,17 +27,6 @@ Adobe Illustrator, Photoshop ve SketchUp kullanarak fuar standları tasarlama ge
 
 st.divider()
 
-# Hakkımda Bölümü
-st.header("📂 Hakkımda")
-
-# Sütunlara bölelim (Görsel ve Yazı yan yana olsun)
-col1, = st.columns([1])
-with col1:
-    # Buraya bir resim ekleyebilirsiniz, şimdilik yazı koyalım
-    st.info,("BOŞ")
-
-st.divider()
-
 # Projeler Bölümü
 st.header("📂 Projelerim")
 
