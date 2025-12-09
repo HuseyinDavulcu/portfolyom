@@ -45,9 +45,9 @@ with col1:
     # Buraya bir resim ekleyebilirsiniz, şimdilik yazı koyalım
     st.info("PROJE 1") 
     # Dosya uzantısı .jpg ise .jpg, .png ise .png yazmayı unutmayın
-st.image("vba_proje.png", caption="Excel VBA ile Otomatik Palet Yerleşimi")
-st.image("vba_proje1.png", caption="Excel VBA ile Otomatik Palet Yerleşimi")
-st.image("vba_proje3.png", caption="Excel VBA ile Otomatik Palet Yerleşimi")
+st.image("vba_proje.png.PNG", caption="Excel VBA ile Otomatik Palet Yerleşimi")
+st.image("vba_proje1.png.PNG", caption="Excel VBA ile Otomatik Palet Yerleşimi")
+st.image("vba_proje3.png.PNG", caption="Excel VBA ile Otomatik Palet Yerleşimi")
 
 with col2:
     st.subheader("Excel VBA Palet Optimizasyonu")
