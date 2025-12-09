@@ -31,11 +31,13 @@ st.header("📂 Hakkımda")
 col1, = st.columns([1])
 with col1:
     # Buraya bir resim ekleyebilirsiniz, şimdilik yazı koyalım
-    st.write,("""Uluslararası Ticaret ve Finans alanındaki sağlam temelimle, otomotiv ve tekstil sektörlerini kapsayan çeşitli bir profesyonel geçmişe sahibim.
+    st.write,("""
+    Uluslararası Ticaret ve Finans alanındaki sağlam temelimle, otomotiv ve tekstil sektörlerini kapsayan çeşitli bir profesyonel geçmişe sahibim.
     Operasyonel verimlilik, satış becerisi ve teknik inovasyonu benzersiz bir şekilde bir araya getiriyorum.İkiler Otomotiv Filtre İthalat İhracat San. ve Tic. A.Ş.'de en son İhracat Operasyonları Uzmanı olarak lojistiği optimize etmeye ve operasyonel maliyetleri azaltmaya odaklandım.
     Otomotiv sektöründen önce, tekstil ve promosyon ürünleri endüstrisinde uluslararası satış ve yaratıcı becerilerimi geliştirdiğim kapsamlı bir deneyim kazandım.
     Adobe Illustrator, Photoshop ve SketchUp kullanarak fuar standları tasarlama geçmişine sahibim.
-    İngilizce'yi akıcı (C1) konuşuyorum ve temel düzeyde Almanca ve İspanyolca bilgisine sahibim. Satışın operasyonel zeka ile buluştuğu bu çok disiplinli zihniyeti organizasyonunuza taşımaya hazırım.""")
+    İngilizce'yi akıcı (C1) konuşuyorum ve temel düzeyde Almanca ve İspanyolca bilgisine sahibim. Satışın operasyonel zeka ile buluştuğu bu çok disiplinli zihniyeti organizasyonunuza taşımaya hazırım.
+    """)
 
 st.divider()
 
