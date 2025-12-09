@@ -35,7 +35,7 @@ col1, col2 = st.columns([1, 2])
 
 with col1:
     # Buraya bir resim ekleyebilirsiniz, şimdilik yazı koyalım
-    st.info("PROJE 1") 
+    st.info("📂 PROJE 1") 
     # Dosya uzantısı .jpg ise .jpg, .png ise .png yazmayı unutmayın
 st.image("vba_proje.png.PNG", caption="Excel VBA ile Otomatik Palet Yerleşimi")
 st.image("vba_proje1.png.PNG", caption="Excel VBA ile Otomatik Palet Yerleşimi")
@@ -55,7 +55,7 @@ st.divider()
 col3, col4 = st.columns([1, 2])
 
 with col3:
-    st.info("PROJE 2")
+    st.info("📂 PROJE 2")
  # Dosya uzantısı .jpg ise .jpg, .png ise .png yazmayı unutmayın
 st.image("ciro_hesaplama.PNG", caption="Excel VBA Otomatik Ciro Hesapla")
 st.image("3d_rapor.PNG", caption="Excel VBA ile 3D Rapor")
