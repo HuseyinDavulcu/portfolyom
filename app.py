@@ -15,7 +15,7 @@ with st.sidebar:
     st.write("Bu site Python ve Streamlit ile yapılmıştır.")
 
 # Ana Başlık Bölümü
-st.title("Merhaba, Ben [Hüseyin] 👋")
+st.title("Merhaba, Ben Hüseyin! 👋")
 st.subheader("Python Geliştiricisi & Üretim Tutkunu")
 st.write("""
 Burada geliştirdiğim projeleri, yazdığım otomasyon kodlarını ve 
