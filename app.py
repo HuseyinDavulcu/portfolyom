@@ -15,7 +15,7 @@ with st.sidebar:
 
 # Ana Başlık Bölümü
 st.title("Merhaba, Ben Hüseyin! 👋")
-st.subheader("Kendi yaptığım Çalışmaların küçük özetini burada paylaşıyorum.")
+st.subheader("Kendi yaptığım çalışmaların küçük özetini burada paylaşıyorum.")
 st.write("""
 Uluslararası Ticaret ve Finans alanındaki sağlam temelimle, otomotiv ve tekstil sektörlerini kapsayan çeşitli bir profesyonel geçmişe sahibim.
 Operasyonel verimlilik, satış becerisi ve teknik inovasyonu benzersiz bir şekilde bir araya getiriyorum.İkiler Otomotiv Filtre İthalat İhracat San. ve Tic. A.Ş.'de en son İhracat Operasyonları Uzmanı olarak lojistiği optimize etmeye ve operasyonel maliyetleri azaltmaya odaklandım.
