@@ -56,7 +56,9 @@ col3, col4 = st.columns([1, 2])
 
 with col3:
     st.info("PROJE 2")
-
+ # Dosya uzantısı .jpg ise .jpg, .png ise .png yazmayı unutmayın
+st.image("ciro_hesaplama.PNG", caption="Excel VBA ile Otomatik Palet Yerleşimi")
+st.image("3d_rapor.PNG", caption="Excel VBA ile Otomatik Palet Yerleşimi")
 with col4:
     st.subheader("Python Veri Analizi")
     st.write("""
