@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hüseyin Davulcu | Portfolyo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky blue
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+        }
+        
+        /* Kart hover efekti için */
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Modal Animasyonları */
+        .modal-fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm transition-colors duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-brand-600 dark:text-brand-500">HD.</a>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Ana Sayfa</a>
+                <a href="#about" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Hakkımda</a>
+                <a href="#experience" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Deneyim</a>
+                <a href="#projects" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Projelerim</a>
+                <a href="#skills" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Yetenekler</a>
+                <a href="#contact" class="px-5 py-2 bg-brand-600 text-white rounded-full hover:bg-brand-700 transition shadow-lg shadow-brand-500/30">İletişim</a>
+                
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-800">
+            <a href="#home" class="block px-6 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Ana Sayfa</a>
+            <a href="#about" class="block px-6 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Hakkımda</a>
+            <a href="#experience" class="block px-6 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Deneyim</a>
+            <a href="#projects" class="block px-6 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Projelerim</a>
+            <a href="#skills" class="block px-6 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Yetenekler</a>
+            <a href="#contact" class="block px-6 py-3 text-brand-600 dark:text-brand-400 font-semibold">İletişim</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+        <!-- Background Decor -->
+        <div class="absolute top-20 right-0 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-20 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
+
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1 space-y-6 animate-fade-in-up">
+                <span class="inline-block px-3 py-1 text-sm font-semibold text-brand-600 bg-brand-50 dark:bg-brand-900/30 dark:text-brand-400 rounded-full">
+                    Export Operation & Sales
+                </span>
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+                    Merhaba, ben <br>
+                    <span class="text-brand-600 dark:text-brand-500">Hüseyin Davulcu</span>
+                </h1>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-lg">
+                    Satış stratejileri, müşteri bulmak için yararlı siteler, tasarım, raporlama, oyun, teknik tasarım yetenekleriyle birleştirerek hem kendimi yazılım konusunda geliştirip, hem de sizlere değer katmayı hedeflemekteyim.
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#contact" class="px-8 py-3 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition shadow-lg shadow-brand-500/25 flex items-center gap-2">
+                        <i class="fas fa-paper-plane"></i> İletişime Geç
+                    </a>
+                    <a href="#" class="px-8 py-3 border border-gray-300 dark:border-gray-700 rounded-lg hover:border-brand-500 hover:text-brand-500 transition flex items-center gap-2">
+                        <i class="fas fa-download"></i> CV İndir
+                    </a>
+                </div>
+                <div class="flex gap-6 pt-6 text-gray-500">
+                    <a href="#" class="hover:text-brand-600 transition text-2xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:h_1936@hotmail.com" class="hover:text-brand-600 transition text-2xl"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center relative">
+                <!-- Avatar / Image Placeholder -->
+                <div class="relative w-72 h-72 md:w-96 md:h-96">
+                    <div class="absolute inset-0 bg-brand-600 rounded-[2rem] rotate-6 opacity-20"></div>
+                    <div class="absolute inset-0 bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl flex items-center justify-center group">
+                        <!-- Buraya kendi fotoğrafını koyabilirsin -->
+			 <div class="img-center p-6">
+			<img src="img/ben.jpg" alt="Hüseyin Davulcu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800/50 transition-colors">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 relative">
+                Hakkımda
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-brand-500 rounded mt-2"></span>
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Education Card -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Eğitim</h3>
+                    <p class="font-semibold">Afyon Kocatepe Üniversitesi</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Uluslararası Ticaret ve Finansman</p>
+                    <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 bg-gray-200 dark:bg-gray-700 w-max px-2 py-1 rounded">
+                        <i class="fas fa-star text-yellow-500"></i> GPA: 3.10
+                    </div>
+                </div>
+
+                <!-- Languages Card -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Diller</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>İngilizce (C1 - Akıcı)</span>
+                                <span class="text-brand-600">90%</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+                                <div class="h-2 bg-brand-500 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Almanca (A2)</span>
+                                <span class="text-brand-600">30%</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+                                <div class="h-2 bg-brand-500 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                         <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>İspanyolca (A2)</span>
+                                <span class="text-brand-600">30%</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+                                <div class="h-2 bg-brand-500 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expertise Card -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Uzmanlık</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> İhracat Operasyonları</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> B2B Satış & Pazarlama</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Fuar Temsili & Stand Tasarımı</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> CRM & ERP Yönetimi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-16 relative">
+                Deneyim
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-brand-500 rounded mt-2"></span>
+            </h2>
+
+            <div class="relative border-l-2 border-brand-200 dark:border-brand-900 ml-4 md:ml-0 space-y-12">
+                
+                <!-- Job 1 -->
+                <div class="relative flex flex-col md:flex-row gap-8 md:items-start pl-8 md:pl-0 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-brand-500 rounded-full border-4 border-white dark:border-gray-900 group-hover:scale-125 transition"></div>
+                    <div class="md:w-1/3 md:text-right md:pr-8">
+                        <span class="text-brand-600 dark:text-brand-400 font-bold">08.2025 - Günümüz</span>
+                        <h3 class="text-xl font-bold mt-1">İhracat Operasyon Yöneticisi</h3>
+                        <p class="text-gray-500 text-sm mt-1">İkiler Otomotiv Filtre</p>
+                    </div>
+                    <div class="md:w-2/3 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 dark:border-gray-700">
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Gümrük mevzuatı takibi, lojistik operasyonların (Deniz, Hava, Kara) yönetimi ve Incoterms 2020 kurallarına göre süreçlerin yürütülmesi.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative flex flex-col md:flex-row gap-8 md:items-start pl-8 md:pl-0 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-gray-300 dark:bg-gray-700 rounded-full border-4 border-white dark:border-gray-900 group-hover:bg-brand-500 transition"></div>
+                    <div class="md:w-1/3 md:text-right md:pr-8">
+                        <span class="text-brand-600 dark:text-brand-400 font-bold">08.2023 - 08.2025</span>
+                        <h3 class="text-xl font-bold mt-1">İhracat Satış Temsilcisi</h3>
+                        <p class="text-gray-500 text-sm mt-1">Görenler Textile</p>
+                    </div>
+                    <div class="md:w-2/3 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 dark:border-gray-700">
+                        <p class="text-gray-600 dark:text-gray-300 mb-2">
+                            <span class="font-semibold text-brand-500">Başarılar:</span> İngiltere, İspanya ve İtalya pazarında aktif satış ve müşteri yönetimi.
+                        </p>
+                        <ul class="list-disc list-inside text-sm text-gray-500 dark:text-gray-400 space-y-1">
+                            <li>Canias ERP üzerinden üretim takibi.</li>
+                            <li>Uluslararası fuarlara katılım (PSI Düsseldorf vb.).</li>
+                            <li>Numune süreçlerinin yönetimi.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative flex flex-col md:flex-row gap-8 md:items-start pl-8 md:pl-0 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-gray-300 dark:bg-gray-700 rounded-full border-4 border-white dark:border-gray-900 group-hover:bg-brand-500 transition"></div>
+                    <div class="md:w-1/3 md:text-right md:pr-8">
+                        <span class="text-brand-600 dark:text-brand-400 font-bold">12.2021 - 05.2022</span>
+                        <h3 class="text-xl font-bold mt-1">İhracat Operasyon Yöneticisi</h3>
+                        <p class="text-gray-500 text-sm mt-1">Kayteks Örme Giyim</p>
+                    </div>
+                    <div class="md:w-2/3 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 dark:border-gray-700">
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Mikro ERP programı kullanımı, yükleme organizasyonları ve gümrük süreçlerinin yönetimi.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (YENİ EKLENDİ) -->
+    <section id="projects" class="py-20 bg-white dark:bg-gray-800/50 transition-colors">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-6 relative">
+                Projelerim
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-brand-500 rounded mt-2"></span>
+            </h2>
+            <p class="text-center text-gray-500 dark:text-gray-400 mb-16 max-w-2xl mx-auto">
+                Kariyerim boyunca dahil olduğum projeler, tasarladığım fuar standları ve yürüttüğüm operasyonlardan bazı örnekler.
+            </p>
+
+            <!-- Projects Grid Container -->
+            <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Burası JavaScript (aşağıdaki script) tarafından otomatik doldurulacak -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 relative">
+                Yetenekler
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-brand-500 rounded mt-2"></span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Professional Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <i class="fas fa-chart-line text-brand-600"></i> Profesyonel
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-brand-500 transition shadow-sm">
+                            <i class="fas fa-users text-2xl text-blue-500 mb-2"></i>
+                            <h4 class="font-bold">Müşteri İlişkileri</h4>
+                            <p class="text-xs text-gray-500">B2B & CRM</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-brand-500 transition shadow-sm">
+                            <i class="fas fa-database text-2xl text-purple-500 mb-2"></i>
+                            <h4 class="font-bold">ERP Sistemleri</h4>
+                            <p class="text-xs text-gray-500">Canias, Mikro, EDS</p>
+                        </div>
+                         <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-brand-500 transition shadow-sm">
+                            <i class="fas fa-ship text-2xl text-teal-500 mb-2"></i>
+                            <h4 class="font-bold">Lojistik</h4>
+                            <p class="text-xs text-gray-500">Incoterms 2020</p>
+                        </div>
+                         <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-brand-500 transition shadow-sm">
+                            <i class="fas fa-search text-2xl text-orange-500 mb-2"></i>
+                            <h4 class="font-bold">Pazar Analizi</h4>
+                            <p class="text-xs text-gray-500">Hedef Müşteri Tespiti</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creative & Technical Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <i class="fas fa-palette text-brand-600"></i> Tasarım & Teknik
+                    </h3>
+                    <div class="space-y-6 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold"><i class="fas fa-cube mr-2"></i>SketchUp & Lumion</span>
+                                <span class="text-xs bg-brand-100 text-brand-700 px-2 py-1 rounded">İleri Düzey</span>
+                            </div>
+                            <div class="text-sm text-gray-500 mb-2">Fuar standı ve 3D modelleme projeleri.</div>
+                        </div>
+                        <hr class="border-gray-200 dark:border-gray-700">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold"><i class="fab fa-adobe mr-2"></i>Adobe Illustrator</span>
+                            </div>
+                        </div>
+                        <hr class="border-gray-200 dark:border-gray-700">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold"><i class="fas fa-image mr-2"></i>Adobe Photoshop</span>
+                            </div>
+                        </div>
+                         <hr class="border-gray-200 dark:border-gray-700">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold"><i class="fas fa-file-excel mr-2"></i>MS Office (Excel)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-800/50 transition-colors">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 relative">
+                İletişim
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-brand-500 rounded mt-2"></span>
+            </h2>
+
+            <div class="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                <!-- Info Side -->
+                <div class="bg-brand-600 text-white p-10 md:w-2/5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">İletişime Geçin</h3>
+                        <p class="text-brand-100 mb-8">İş birlikleri, projeler veya sadece merhaba demek için bana ulaşabilirsiniz.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-brand-200">E-Posta</p>
+                                    <p class="font-semibold">h_1936@hotmail.com</p>
+                                </div>
+                            </div>
+                             <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-brand-200">Telefon</p>
+                                    <p class="font-semibold">+90 (543) 453 19 36</p>
+                                </div>
+                            </div>
+                             <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-brand-200">Konum</p>
+                                    <p class="font-semibold">Denizli, Türkiye</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 mt-8">
+                        <a href="#" class="w-10 h-10 border border-brand-400 rounded-full flex items-center justify-center hover:bg-brand-500 transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 border border-brand-400 rounded-full flex items-center justify-center hover:bg-brand-500 transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Form Side (Visual Only) -->
+                <div class="p-10 md:w-3/5">
+                    <form action="mailto:h_1936@hotmail.com" method="post" enctype="text/plain">
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Adınız Soyadınız</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none focus:border-brand-500 transition" placeholder="Örn: Ahmet Yılmaz">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">E-Posta Adresiniz</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none focus:border-brand-500 transition" placeholder="ornek@email.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Mesajınız</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none focus:border-brand-500 transition" placeholder="Mesajınızı buraya yazın..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-600 text-white font-bold py-3 rounded-lg hover:bg-brand-700 transition">
+                            Gönder
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400 mb-2">© 2025 Hüseyin Davulcu. Tüm hakları saklıdır.</p>
+            <p class="text-sm text-gray-600">Designed with modern web technologies.</p>
+        </div>
+    </footer>
+
+    <!-- PROJE DETAY MODALI (POPUP) -->
+    <div id="project-modal" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeModal(event)">
+        <!-- Modal İçeriği -->
+        <div class="bg-white dark:bg-gray-900 rounded-2xl w-full max-w-5xl mx-4 shadow-2xl overflow-hidden flex flex-col max-h-[90vh] relative transform scale-95 transition-transform duration-300" id="modal-content">
+            
+            <!-- Kapat Butonu -->
+            <button onclick="closeModal(null, true)" class="absolute top-4 right-4 z-50 p-2 bg-white/10 hover:bg-white/20 rounded-full text-gray-800 dark:text-white transition">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <div class="flex flex-col md:flex-row h-full">
+                <!-- Sol Taraf: Galeri -->
+                <div class="w-full md:w-3/5 bg-gray-100 dark:bg-gray-800 flex flex-col">
+                    <!-- Ana Resim -->
+                    <div class="flex-grow relative flex items-center justify-center p-4 h-[40vh] md:h-auto">
+                        <img id="modal-main-image" src="" alt="Proje Detay" class="max-w-full max-h-full object-contain rounded-lg shadow-lg">
+                    </div>
+                    <!-- Küçük Resimler (Thumbnails) -->
+                    <div id="modal-thumbnails" class="h-24 bg-gray-200 dark:bg-gray-900 p-2 flex gap-2 overflow-x-auto items-center justify-center border-t border-gray-300 dark:border-gray-700">
+                        <!-- JS ile doldurulacak -->
+                    </div>
+                </div>
+
+                <!-- Sağ Taraf: Bilgiler -->
+                <div class="w-full md:w-2/5 p-8 overflow-y-auto bg-white dark:bg-gray-900">
+                    <span id="modal-category" class="inline-block px-3 py-1 text-xs font-bold text-brand-600 bg-brand-50 dark:bg-brand-900/30 dark:text-brand-400 rounded-full mb-4">
+                        Kategori
+                    </span>
+                    <h3 id="modal-title" class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Proje Başlığı</h3>
+                    <div class="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        <p id="modal-description">Proje açıklaması buraya gelecek.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- PROJE EKLEME MODÜLÜ (GÜNCELLENMİŞ VERSİYON) ---
+        // 'galeri' kısmına istediğiniz kadar resim ekleyebilirsiniz.
+        
+        const projelerim = [
+            {
+                id: 1,
+                baslik: "PSI Düsseldorf Fuarı, Stand Tasarımı",
+                kategori: "3D Tasarım & Fuar",
+                // Ana resim (Kapak resmi)
+                resim: "img/Stand1.jpg.png",
+                // DETAYLARDAKİ GALERİ İÇİN RESİM LİSTESİ:
+                galeri: [
+                    "img/Stand1.jpg.png",
+                    "img/Stand2.jpg.png",
+                    
+                ],
+                // Kısa açıklama (Kart üzerinde görünür)
+                aciklama: "Almanya'da düzenlenen promosyon ürünleri fuarı için tasarladığım, markanın kurumsal kimliğini yansıtan modüler stand tasarımı görüntüsü ve ziyareti.",
+                // Uzun detay (Tıklayınca açılan pencerede görünür)
+                detay: "Bu proje kapsamında PSI Düsseldorf fuarında markamızın en iyi şekilde temsil edilmesi için 120m2'lik bir alan üzerine kurulu özel bir stand tasarladım. Tasarım sürecinde SketchUp ve Lumion kullanarak 3D renderlar aldım. Standın kurulum aşamasında bizzat bulunarak teknik detayların uygulanmasını denetledim."
+            },
+            {
+                id: 2,
+                baslik: "B2B İhracat Pazarlama Stratejisi",
+                kategori: "Pazarlama & Strateji",
+                resim: "img/ciro_hesaplama.png",
+                galeri: [
+                     "img/ciro_hesaplama.png",
+                     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop"
+                ],
+                aciklama: "İhracatı geliştirmek adına hazırlanan, hedef müşteri analizi ve rekabet raporlarını içeren, minimum belirlenmesi gereken fiyatı otomatik olarak maliyet hesaplayan, kapsamlı strateji Excel VBA çalışması.",
+                detay: "İngiltere ve Avrupa pazarına giriş stratejisi olarak hazırlanan bu çalışmada; potansiyel müşteri listeleri, rakip fiyat analizleri ve lojistik maliyetlerin ürün birim fiyatına etkisini hesaplayan otomatik bir Excel VBA modülü geliştirdim. Bu sayede teklif verme süreci %40 hızlandı."
+            },
+            {
+                id: 3,
+                baslik: "Excel VBA - Palet Optimizasyonu",
+                kategori: "Lojistik & Yazılım",
+                resim: "img/vba_proje1.png.png",
+                galeri: [
+                    "img/vba_proje1.png.png",
+                    "img/vba_proje.png.png",
+                    "img/vba_proje3.png.png"
+                ],
+                aciklama: "Müşteri taleplerine istinaden, otomatik olarak paletleme optimizasyonu yapan bir kodlama yazdım.",
+                detay: "Lojistik maliyetlerini düşürmek amacıyla, konteyner ve tır yüklemelerinde maksimum doluluk oranını hesaplayan bir algoritma yazdım. Müşteri siparişlerini girdiğinde sistem otomatik olarak en uygun koli/palet dizilimini öneriyor."
+            },
+            {
+                id: 4,
+                baslik: "3D İhracat Raporlama Sistemi",
+                kategori: "Veri Analizi & 3D",
+                resim: "img/3d_rapor.png",
+                galeri: [
+                    "img/3d_rapor.png"
+                ],
+                aciklama: "Dünyada konu ürün hakkında yapılan ihracat ve ithalat toplamını 3D olarak gezinilen bir rapor sistemi yaptım.",
+                detay: "Geleneksel tablo raporlarının ötesine geçerek, dünya haritası üzerinde interaktif bir 3D veri görselleştirme sistemi kurdum. Bu sistem sayesinde hangi ülkeye ne kadar ihracat yapıldığı görsel olarak analiz edilebiliyor."
+            }
+        ];
+
+        // --- SAYFA YÜKLENİRKEN ÇALIŞAN KODLAR ---
+        const gridContainer = document.getElementById('projects-grid');
+
+        // Projeleri Ekrana Bas
+        projelerim.forEach((proje, index) => {
+            // Eğer galeri tanımlanmamışsa ana resmi galeriye ekle
+            if (!proje.galeri) { proje.galeri = [proje.resim]; }
+
+            const cardHTML = `
+                <div class="group project-card relative overflow-hidden rounded-2xl shadow-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-700 h-full flex flex-col">
+                    <!-- Resim Alanı -->
+                    <div class="relative h-64 overflow-hidden flex-shrink-0">
+                        <div class="absolute inset-0 bg-gray-900/10 dark:bg-gray-900/30 group-hover:bg-transparent transition z-10"></div>
+                        <img src="${proje.resim}" alt="${proje.baslik}" class="w-full h-full object-cover transition-transform duration-500">
+                        
+                        <!-- Kategori Etiketi -->
+                        <div class="absolute top-4 left-4 z-20">
+                            <span class="px-3 py-1 text-xs font-bold text-white bg-brand-600 rounded-full shadow-lg">
+                                ${proje.kategori}
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- İçerik Alanı -->
+                    <div class="p-6 relative z-20 bg-white dark:bg-gray-900 transition-colors flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition">${proje.baslik}</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-3 mb-4 flex-grow">
+                            ${proje.aciklama}
+                        </p>
+                        <!-- Detay Butonu (Modalı Tetikler) -->
+                        <button onclick="openModal(${index})" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 transition mt-auto">
+                            Detayları Gör <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            gridContainer.innerHTML += cardHTML;
+        });
+
+
+        // --- MODAL (POPUP) İŞLEMLERİ ---
+        
+        const modal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+        const modalMainImage = document.getElementById('modal-main-image');
+        const modalThumbnails = document.getElementById('modal-thumbnails');
+        const modalTitle = document.getElementById('modal-title');
+        const modalCategory = document.getElementById('modal-category');
+        const modalDescription = document.getElementById('modal-description');
+
+        // Modalı Aç
+        function openModal(index) {
+            const proje = projelerim[index];
+            
+            // İçeriği Doldur
+            modalTitle.textContent = proje.baslik;
+            modalCategory.textContent = proje.kategori;
+            modalDescription.textContent = proje.detay || proje.aciklama; // Detay yoksa kısa açıklamayı göster
+            
+            // Galeri Hazırlığı
+            const images = proje.galeri || [proje.resim];
+            setModalImage(images[0]); // İlk resmi ana resim yap
+
+            // Küçük Resimleri (Thumbnails) Oluştur
+            modalThumbnails.innerHTML = '';
+            images.forEach(imgSrc => {
+                const thumb = document.createElement('img');
+                thumb.src = imgSrc;
+                thumb.className = "h-16 w-16 object-cover rounded cursor-pointer border-2 border-transparent hover:border-brand-500 transition opacity-70 hover:opacity-100";
+                thumb.onclick = () => setModalImage(imgSrc);
+                modalThumbnails.appendChild(thumb);
+            });
+
+            // Modalı Göster (Animasyonlu)
+            modal.classList.remove('hidden');
+            // Timeout, display:block olduktan sonra opacity transition çalışsın diye
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Arka plan scrollunu engelle
+        }
+
+        // Ana Resmi Değiştir
+        function setModalImage(src) {
+            modalMainImage.style.opacity = '0.5';
+            setTimeout(() => {
+                modalMainImage.src = src;
+                modalMainImage.style.opacity = '1';
+            }, 150);
+        }
+
+        // Modalı Kapat
+        function closeModal(event, force = false) {
+            // Sadece siyah alana veya kapat butonuna basılınca kapat
+            if (force || event.target === modal) {
+                modal.classList.add('opacity-0');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+                
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = 'auto'; // Scrollu geri aç
+                }, 300);
+            }
+        }
+
+        // ESC tuşu ile kapatma
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && !modal.classList.contains('hidden')) {
+                closeModal(null, true);
+            }
+        });
+
+
+        // --- EXTRAS (Eski Kodlar) ---
+
+        // Dark Mode Logic
+        const toggleBtn = document.getElementById('theme-toggle');
+        const html = document.documentElement; // html değişkenini tanımladım
+        
+        // Check local storage or system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+            } else {
+                localStorage.theme = 'light';
+            }
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
